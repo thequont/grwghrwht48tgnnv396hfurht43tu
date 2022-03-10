@@ -10,7 +10,7 @@ st.write(clist)
 id_ = st.sidebar.selectbox("Select ID:",clist)
 st.header("T over time")
 fig = px.line(df[df['id_'] == id_], 
-    x = "time", y = "T", title = id_)
+    x = "time", y = "T", title = int(id_))
 st.plotly_chart(fig)
 
 
