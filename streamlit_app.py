@@ -4,6 +4,7 @@ import plotly.express as px
 df = pd.DataFrame(pd.read_csv("data.csv"))
 df['time'] = pd.to_datetime(df['time'])
 clist = df['ID'].unique()
+st.write(clist)
 country = st.sidebar.selectbox("Select ID:",clist)
 st.header("T over time")
 fig = px.line(df[df['ID'] == ID], 
