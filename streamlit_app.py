@@ -5,7 +5,7 @@ df['time'] = pd.to_datetime(df['time'])
 clist = df['ID'].unique()
 country = st.sidebar.selectbox("Select ID:",clist)
 st.header("T over time")
-fig = px.line(df[df['ID'] == ID], 
+fig = st.line(df[df['ID'] == ID], 
     x = "time", y = "T", title = ID)
 st.plotly_chart(fig)
 
