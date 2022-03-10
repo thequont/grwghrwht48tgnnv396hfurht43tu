@@ -1,10 +1,9 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
-df = pd.DataFrame(px.data.gapminder())
-clist = df['country'].unique()
-country = st.sidebar.selectbox("Select a country:",clist)
-st.header("GDP per Capita over time")
-fig = px.line(df[df['country'] == country], 
-    x = "year", y = "gdpPercap", title = country)
+df = pd.DataFrame(read_csv("data.csv"))
+clist = df['ID'].unique()
+country = st.sidebar.selectbox("Select ID:",clist)
+st.header("T over time")
+fig = px.line(df[df['ID'] == ID], 
+    x = "time", y = "T", title = ID)
 st.plotly_chart(fig)
