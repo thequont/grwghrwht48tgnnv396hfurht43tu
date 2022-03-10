@@ -4,6 +4,7 @@ import plotly.express as px
 from datetime import datetime
 df = pd.DataFrame(pd.read_csv("data.csv"))
 df['time'] = pd.to_datetime(df['time'])
+st.write(df)
 clist = df['id_'].unique()
 id_ = st.sidebar.selectbox("Select ID:",clist)
 st.header("T over time")
