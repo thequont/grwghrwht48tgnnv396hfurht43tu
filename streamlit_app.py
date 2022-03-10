@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 df = pd.DataFrame(pd.read_csv("data.csv"))
+st.write(df)
 clist = df['ID'].unique()
 country = st.sidebar.selectbox("Select ID:",clist)
 st.header("T over time")
