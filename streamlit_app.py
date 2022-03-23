@@ -13,6 +13,11 @@ fig = px.line(df[df['id_'] == id_],
     x = "time", y = "T", title = str(id_))
 st.plotly_chart(fig)
 
+st.header("RSSI over time")
+figR = px.line(df[df['id_'] == id_], 
+    x = "time", y = "RSSI", title = str(id_))
+st.plotly_chart(figR)
+
 st.header("Raw Data")
 st.write(df)
 
