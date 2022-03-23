@@ -10,7 +10,7 @@ clist = df['id_'].unique()
 id_ = st.sidebar.selectbox("Select ID:",clist)
 st.header("T over time")
 fig = px.line(df[df['id_'] == id_], 
-    x = "time", y = "T", title = str(id_))
+    x = "time", y = "T", z="RSSI", title = str(id_))
 st.plotly_chart(fig)
 
 st.header("RSSI over time")
