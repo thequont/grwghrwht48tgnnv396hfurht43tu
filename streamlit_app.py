@@ -9,7 +9,7 @@ df = pd.DataFrame(pd.read_csv("data.csv"))
 clist = df['id_'].unique()
 id_ = st.sidebar.selectbox("Select ID:",clist)
 st.header("T over time")
-fig = px.line(df[df['id_'] == id_], 
+fig = px.scatter_3d(df[df['id_'] == id_], 
     x = "time", y = "T", z="RSSI", title = str(id_))
 st.plotly_chart(fig)
 
